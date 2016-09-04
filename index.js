@@ -83,7 +83,7 @@ app.get('/stats', function(req,res){
 			{
 				max_army = parseInt(data[i].defender_size);
 			}
-			average_army = average_army + parseInt(data[i].defender_size);
+			if(data[i].defender_size){average_army = average_army + parseInt(data[i].defender_size);}
 		}
 		average_army = average_army / data.length;
 		eventEmitter.emit('response',{data: average_army, type: 'defender_size_average'});
