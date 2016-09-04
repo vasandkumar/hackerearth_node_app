@@ -59,7 +59,7 @@ app.get('/stats', function(req,res){
 	{
 		eventEmitter.emit('response',{data: data[0].name, type: 'name'});
 	});
-	mysqlObject.search("SELECT battle_type as count FROM battles", function(data)
+	mysqlObject.search("SELECT battle_type FROM battles", function(data)
 	{
 		battle_types = [];
 		for(var i in data)
