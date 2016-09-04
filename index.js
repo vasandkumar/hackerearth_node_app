@@ -64,7 +64,7 @@ app.get('/stats', function(req,res){
 		battle_types = [];
 		for(var i in data)
 		{
-			battle_types.push(data[i].battle_type);
+			if(data[i].battle_type){battle_types.push(data[i].battle_type);}
 		}
 		eventEmitter.emit('response',{data: battle_types, type: 'battle_type'});
 	});
